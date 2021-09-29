@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mednear</title>
+    <style>
+        img{
+            width: 100%;
+            height: 50%;
+        }
+        button:hover{
+            color: rgb(56, 32, 32);
+            background-color: rgb(88, 165, 165);
+            border: 2px solid black;
+        }
+        button{
+            background-color: #20868a;
+            border: none;
+            padding: 10px;
+            font-size: 15px;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            float: right;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-right: 30px;
+            margin-top: 8px;
+        }
+
+        #products{
+            display: grid;
+            columns: 20%, 20%;
+            grid-template-columns: 20% 20% 20% 20% 20% 20% 20%;
+            /* border: 1px solid black; */
+        }
+
+
+        #products > div{
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+        p:nth-child(4){
+            padding: 8px;
+            line-height: 0%;
+            color: red;
+            display: flex;
+            float: left;
+            font-size: large;
+            /* border: 1px solid cadetblue; */
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>TRENDING PRODUCTS</h2>
+    <div id="products"></div>
+</body>
+</html>
+
+<script src="index.js"></script>
