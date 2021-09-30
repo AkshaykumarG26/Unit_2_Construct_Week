@@ -45,7 +45,7 @@
     ]
     
     
-    let parent = document.getElementById("products");
+    let parent = document.getElementById("trendingProducts");
     
     function showProducts(){
     
@@ -94,5 +94,4 @@
         localStorage.setItem("mednearCart", JSON.stringify(products_in_cart));
     }
     
-    
-    
+  
