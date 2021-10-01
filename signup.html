@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup/Login</title>
+
+    <style>
+        h2{
+            font-family: 'Nunito', sans-serif;
+            color:#4DB6AC;
+            font-size: 18px;
+        }
+        p{
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+        
+        }
+    form{
+        width: 10%;
+    }
+    input {
+        margin-top: 8%;
+    }
+    #box{
+        
+        /* vertical-align: top; */
+        /* border: 1px solid black; */
+        height: 650px;
+        width: 100%;
+        margin: auto;
+        margin-top: 80px;
+        background-color: #F5F5F5;
+        padding-top: 35px;
+        
+      
+    }
+    #box2{
+        
+        /* display: inline-block; */
+        margin: auto;
+        background-color: white;
+        /* border: 1px solid red; */
+        height: 580px;
+        width: 950px;
+        
+      
+       /* vertical-align: top; */
+       /* margin-top: 150px; */
+
+    }
+    #box3{
+       
+        display: inline-block;     
+/* border: 1px solid green; */
+height: 550px;
+width: 430px;
+margin-left: 500px;
+margin-top: -590px;
+
+vertical-align: top;
+
+    }
+    #box4{
+        
+        vertical-align: top;
+        /* border: 3px solid blue; */
+        height: 550px;
+        width: 380px;
+        display: inline-block;
+        
+        
+    }
+    #midline{
+        
+        display: inline-block;
+        border: 1px solid rgba(128, 128, 128, 0.178);
+        height: 580px;
+        
+        margin-left: 50px;
+     
+    }
+    input{
+        border-radius: 5px;
+        /* border-color: #f5f5f5a6; */
+        padding: 12px;
+        margin: 10px 0;
+        width: 900%;
+        border-color: #F5F5F5;
+
+    }
+    #img{
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    #signup{
+        background-color: #13ad9e;
+        width: 384px;
+        height: 46px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        color: white;
+        border-radius: 5px;
+        margin-top: px;
+    }
+    #signupText{
+        /* background-color: #26A69A; */
+        width: 384px;
+        height: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        /* color: white; */
+        border-radius: 5px;
+    }
+    span{
+        color: #009688;
+    }
+    #loginText{
+        width: 384px;
+        height: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        /* color: white; */
+        border-radius: 5px;
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+    <div id = "box">
+        
+     
+       <div id = box2> 
+       
+    
+        <div> 
+
+        <div id ="box4">
+
+            <img id = "img" src ="https://mednear.com/assets/web/images/others/mn-register-banner.jpg" />
+            </div>
+             
+         
+            <div id = "midline">
+                
+        
+            </div>
+        <div id = "box3"> 
+
+       
+        
+        
+    <h2> Sign Up</h2>
+    <p> Signup now & refer to get ₹ 50 MINCASH. We don't share your personal details with anyone.</p>
+<form onsubmit="signup(event)" id="myForm" action ="" > 
+<input type = "text" id = "name" placeholder = "Name"/>
+<input type = "number" id = "number" placeholder = "Mobile Number"/>
+
+<input type = "text" id = "email" placeholder = "Email"/>
+
+
+
+<input type = "text" id = "setPassword" placeholder = "Set Password"/>
+<input type = "text" id = "confirmPassword" placeholder = "Confirm Password"/>
+<p id="signupText"> By signing up, you agree to our <span>Terms and Conditions</span></p>
+<button type="submit" id ="signup"> SIGN UP </button>
+<p id="loginText"> Existing user? <span>Login </span></p>
+</div>
+</div>
+    </div>
+         </div>  
+            
+
+</form>
+    
+</body>
+</html>
+
+<script>
+
+function signup(e){
+    e.preventDefault();
+
+    let myForm = document.getElementById("myForm");
+
+    let name = myForm.name.value;
+
+    let number = myForm.number.value;
+    
+    let email = myForm.email.value;
+    
+    let setPassword = myForm.setPassword.value;
+
+    let confirmPassword = myForm.confirmPassword.value;
+
+    console.log("data;", name, number, email, setPassword, confirmPassword );
+    
+    if ( localStorage.getItem("users") === null){
+        localStorage.setItem("users", JSON.stringify([]))
+    }
+
+    let user={
+        name,
+        number,
+        email,
+        setPassword,
+        confirmPassword, 
+        
+    }
+
+    let arr = JSON.parse(localStorage.getItem("users"))
+
+    arr.push(user)
+
+
+    localStorage.setItem("users",  JSON.stringify(arr));
+
+
+
+}
+
+
+</script>
