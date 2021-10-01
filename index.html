@@ -15,6 +15,7 @@
             background-color: rgb(88, 165, 165);
             border: 2px solid black;
         }
+
         button{
             background-color: #20868a;
             border: none;
@@ -29,33 +30,31 @@
             margin-top: 8px;
         }
 
-        #trendingProducts{
+        #trendingProducts, #recommendedProducts{
             display: grid;
-            columns: 20%, 20%;
             grid-template-columns: 20% 20% 20% 20% 20% 20% 20%;
             overflow-x: auto;
-            overflow-y: hidden;
+            /* overflow-y: auto; */
             /* border: 1px solid black; */
         }
 
 
-        #trendingProducts > div{
+        #trendingProducts > div, #recommendedProducts > div{
             /* border: 1px solid red; */
             padding: 10px;
             
         }
 
-        #trendingProducts > div:hover{
+        #trendingProducts > div:hover, #recommendedProducts > div:hover{
             /* background-color: rgb(253, 253, 253); */
-            box-shadow: 20px 20px 30px -30px #858f8c;
+            box-shadow: 20px 20px 30px -20px #858f8c;
+            border: 1px solid rgb(192, 189, 189);
             
         }
 
         p:nth-child(4){
             padding: 8px;
             line-height: 0%;
-            color: red;
-            /* display: flex; */
             float: left;
             font-size: large;
             /* border: 1px solid cadetblue; */
@@ -68,23 +67,6 @@
             font-size: large;
             color: gray;
         }
-
-        #transport{
-            width: 1200px;
-            border: 1px solid black;
-            padding: 30px;
-        }
-
-        #transport > img{
-            width: 300px;
-            background: none;
-            display: flex;
-        }
-
-        #locations > p{
-            display: flex;
-            float: right;
-        }
     </style>
 </head>
 <body>
@@ -92,13 +74,7 @@
     <h2>TRENDING PRODUCTS</h2>
     <div id="trendingProducts"></div>
     <h2>RECOMMENDED PRODUCTS</h2>
-    <div id="transport">
-        <img src="https://www.pikpng.com/pngl/m/211-2116804_india-map-india-political-map-outline-clipart.png" alt="">
-        <div id="locations">
-            <h2>We deliver medicines and health products across 26000+ areas and counting in india</h2>
-            <p>Including Chennai, Delhi, Bangalore, Hyderabad, Ahmedabad,  Kolkata, Surat, Pune, Jaipur, Lucknow, Kanpur, Nagpur, Indore, Thane, Bhopal, Visakhapatnam, Pimpri & Chinchwad, Patna, Vadodara, Ghaziabad, Ludhiana, Agra, Nashik, Faridabad, Meerut,Rajkot, Kalyan & Dombivali, Vasai Virar, Varanasi, Srinagar, Aurangabad, Dhanbad, Amritsar, Navi Mumbai, Allahabad, Ranchi, Haora, Coimbatore, Jabalpur, Gwalior, Vijayawada,Jodhpur, Madurai, Raipur, Kota, Guwahati, Chandigarh, Solapur, Hubli and Dharwad, Bareilly, Moradabad, Mysore, Gurgaon, Aligarh, Jalandhar, Tiruchirappalli, Bhubaneswar, Salem, Mira and Bhayander, Thiruvananthapuram, Bhiwandi, Saharanpur, Gorakhpur ...</p>
-        </div>
-    </div>
+    <div id="recommendedProducts" class="recommendedProducts"></div>
 </body>
 </html>
 
